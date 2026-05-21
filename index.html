@@ -7,60 +7,126 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main class="deck-shell" aria-label="Hylander Mobile pitch deck">
-      <section class="intro-screen" id="introScreen">
-        <div class="intro-content">
-          <p class="eyebrow">Hudson Valley Local Logistics</p>
-          <h1>Hylander Mobile Delivery Network</h1>
-          <p class="subtitle">Late-Night Food, Convenience &amp; Local Logistics</p>
-          <button class="primary-action" id="startButton" type="button">
-            Start Presentation
-          </button>
-        </div>
-      </section>
+    <header class="site-nav">
+      <a class="nav-logo" href="index.html" aria-label="Hylander Mobile Delivery Network home">
+        <span class="logo-mark">HM</span>
+        <span>Hylander Mobile Network</span>
+      </a>
 
-      <section class="presentation" id="presentation" aria-live="polite">
-        <header class="deck-navbar">
-          <div class="nav-branding">
-            <p class="brand">Hylander Mobile Network</p>
-            <p class="nav-subtitle">Delivery Network Pitch Deck</p>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="financials.html">Financials</a>
+        <a href="#vision">Vision</a>
+        <a href="#markets">Markets</a>
+        <a href="#project">Contact / Project</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="deck-hero" id="home" aria-label="Hylander Mobile pitch deck">
+        <div class="intro-screen" id="introScreen">
+          <div class="intro-content">
+            <p class="eyebrow">Hudson Valley Local Logistics</p>
+            <h1>Hylander Mobile Delivery Network</h1>
+            <p class="subtitle">Late-Night Food, Convenience &amp; Local Logistics</p>
+            <button class="primary-action" id="startButton" type="button">
+              Start Presentation
+            </button>
           </div>
+        </div>
 
-          <div class="nav-status">
+        <section class="presentation" id="presentation" aria-live="polite">
+          <div class="deck-statusbar">
             <p class="slide-count" id="slideCount">Slide 1 / 9</p>
-            <nav class="controls" aria-label="Presentation controls">
+
+            <div class="controls" aria-label="Presentation controls">
               <button class="control-button" id="restartButton" type="button" title="Restart">
                 Restart
               </button>
               <button class="control-button" id="fullscreenButton" type="button" title="Fullscreen">
                 Fullscreen
               </button>
-            </nav>
+            </div>
           </div>
-        </header>
 
-        <button class="nav-button nav-prev" id="prevButton" type="button" aria-label="Previous slide">
-          <span aria-hidden="true">&lsaquo;</span>
-        </button>
+          <button class="nav-button nav-prev" id="prevButton" type="button" aria-label="Previous slide">
+            <span aria-hidden="true">&lsaquo;</span>
+          </button>
 
-        <figure class="slide-frame">
-          <img id="slideImage" src="" alt="Hylander Mobile pitch deck slide" />
-        </figure>
+          <figure class="slide-frame">
+            <img id="slideImage" src="" alt="Hylander Mobile pitch deck slide" />
+          </figure>
 
-        <button class="nav-button nav-next" id="nextButton" type="button" aria-label="Next slide">
-          <span aria-hidden="true">&rsaquo;</span>
-        </button>
+          <button class="nav-button nav-next" id="nextButton" type="button" aria-label="Next slide">
+            <span aria-hidden="true">&rsaquo;</span>
+          </button>
 
-        <footer class="deck-footer">
-          <div class="dot-strip" id="dotStrip" aria-label="Slide navigation"></div>
-          <p>Early-stage concept. Financial projections are illustrative examples, not guaranteed results.</p>
-        </footer>
+          <footer class="deck-footer">
+            <div class="dot-strip" id="dotStrip" aria-label="Slide navigation"></div>
+            <p>Early-stage concept. Financial projections are illustrative examples, not guaranteed results.</p>
+          </footer>
 
-        <div class="progress-track" aria-hidden="true">
-          <div class="progress-bar" id="progressBar"></div>
+          <div class="progress-track" aria-hidden="true">
+            <div class="progress-bar" id="progressBar"></div>
+          </div>
+        </section>
+      </section>
+
+      <section class="content-section" id="vision">
+        <div class="section-kicker">Vision</div>
+        <div class="split-layout">
+          <div>
+            <h2>Start with food. Build the network.</h2>
+            <p>
+              Hylander Mobile begins as a food truck brand with a practical path into late-night delivery,
+              convenience runs, courier work, and local logistics across Hudson Valley towns.
+            </p>
+          </div>
+          <div class="story-card">
+            <h3>People-first operations</h3>
+            <p>
+              The network is designed around local demand, better driver treatment, realistic service zones,
+              and community relationships with restaurants, venues, shops, and residents.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section markets-section" id="markets">
+        <div class="section-kicker">Markets</div>
+        <h2>Hudson Valley first. Regional scale next.</h2>
+        <div class="market-pills">
+          <span>Kingston</span>
+          <span>Rhinebeck</span>
+          <span>Beacon</span>
+          <span>Poughkeepsie</span>
+          <span>Woodstock</span>
+          <span>Hudson / Catskill</span>
+          <span>Albany</span>
+          <span>Westchester</span>
+          <span>NYC</span>
+        </div>
+      </section>
+
+      <section class="content-section project-section" id="project">
+        <div class="section-kicker">Project</div>
+        <div class="split-layout">
+          <div>
+            <h2>A local commerce platform hiding inside a food truck.</h2>
+            <p>
+              The goal is to prove repeatable demand in one town, build reliable operating playbooks,
+              then expand market-by-market into a regional late-night logistics network.
+            </p>
+          </div>
+          <a class="primary-action link-action" href="financials.html">View Financials</a>
         </div>
       </section>
     </main>
+
+    <footer class="site-footer">
+      <span>Hylander Mobile Delivery Network</span>
+      <a href="https://hylander-mobile.vercel.app/">hylander-mobile.vercel.app</a>
+    </footer>
 
     <script src="script.js"></script>
   </body>

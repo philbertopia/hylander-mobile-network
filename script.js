@@ -9,8 +9,33 @@ const slides = [
   "img/slide-06.png",
   "img/slide-07.png",
   "img/slide-08.png",
-  "img/slide-09.png",
 ];
+
+const imageCache = new Map();
+
+function preloadImage(src) {
+  if (imageCache.has(src)) {
+    return imageCache.get(src);
+  }
+
+  const promise = new Promise((resolve) => {
+    const image = new Image();
+    image.onload = () => resolve(src);
+    image.onerror = () => resolve(src);
+    image.src = src;
+  });
+
+  imageCache.set(src, promise);
+  return promise;
+}
+
+function preloadAdjacentSlides(index) {
+  [index - 1, index, index + 1, index + 2].forEach((slideIndex) => {
+    if (slides[slideIndex]) {
+      preloadImage(slides[slideIndex]);
+    }
+  });
+}
 
 function initDeck() {
   const introScreen = document.getElementById("introScreen");
@@ -48,17 +73,26 @@ function initDeck() {
     nextButton.disabled = currentSlide === slides.length - 1;
   }
 
-  function updateSlide(index, animate = true) {
-    currentSlide = clampSlide(index);
+  async function updateSlide(index, animate = true) {
+    const nextIndex = clampSlide(index);
+    const nextSrc = slides[nextIndex];
+
+    if (nextIndex === currentSlide && slideImage.src.includes(nextSrc)) {
+      return;
+    }
+
+    await preloadImage(nextSrc);
+    currentSlide = nextIndex;
 
     const showSlide = () => {
-      slideImage.src = slides[currentSlide];
+      slideImage.src = nextSrc;
       slideImage.alt = `Hylander Mobile pitch deck slide ${currentSlide + 1}`;
       slideCount.textContent = `Slide ${currentSlide + 1} / ${slides.length}`;
       progressBar.style.width = `${((currentSlide + 1) / slides.length) * 100}%`;
       updateDots();
       updateButtons();
       slideImage.classList.remove("is-fading");
+      preloadAdjacentSlides(currentSlide);
     };
 
     if (!animate) {
@@ -159,6 +193,7 @@ function initDeck() {
 
   buildDots();
   updateSlide(0, false);
+  slides.forEach((src) => preloadImage(src));
 }
 
 function initCounters() {

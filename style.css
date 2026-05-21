@@ -282,7 +282,7 @@ p {
   background: #000000;
   box-shadow: var(--shadow);
   opacity: 1;
-  transition: opacity 180ms ease;
+  transition: opacity 260ms ease;
 }
 
 .slide-frame img.is-fading {

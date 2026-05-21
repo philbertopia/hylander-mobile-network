@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hylander Mobile Delivery Network</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="deck-shell" aria-label="Hylander Mobile pitch deck">
+      <section class="intro-screen" id="introScreen">
+        <div class="intro-content">
+          <p class="eyebrow">Hudson Valley Local Logistics</p>
+          <h1>Hylander Mobile Delivery Network</h1>
+          <p class="subtitle">Late-Night Food, Convenience &amp; Local Logistics</p>
+          <button class="primary-action" id="startButton" type="button">
+            Start Presentation
+          </button>
+        </div>
+      </section>
+
+      <section class="presentation" id="presentation" aria-live="polite">
+        <header class="deck-navbar">
+          <div class="nav-branding">
+            <p class="brand">Hylander Mobile Network</p>
+            <p class="nav-subtitle">Delivery Network Pitch Deck</p>
+          </div>
+
+          <div class="nav-status">
+            <p class="slide-count" id="slideCount">Slide 1 / 9</p>
+            <nav class="controls" aria-label="Presentation controls">
+              <button class="control-button" id="restartButton" type="button" title="Restart">
+                Restart
+              </button>
+              <button class="control-button" id="fullscreenButton" type="button" title="Fullscreen">
+                Fullscreen
+              </button>
+            </nav>
+          </div>
+        </header>
+
+        <button class="nav-button nav-prev" id="prevButton" type="button" aria-label="Previous slide">
+          <span aria-hidden="true">&lsaquo;</span>
+        </button>
+
+        <figure class="slide-frame">
+          <img id="slideImage" src="" alt="Hylander Mobile pitch deck slide" />
+        </figure>
+
+        <button class="nav-button nav-next" id="nextButton" type="button" aria-label="Next slide">
+          <span aria-hidden="true">&rsaquo;</span>
+        </button>
+
+        <footer class="deck-footer">
+          <div class="dot-strip" id="dotStrip" aria-label="Slide navigation"></div>
+          <p>Early-stage concept. Financial projections are illustrative examples, not guaranteed results.</p>
+        </footer>
+
+        <div class="progress-track" aria-hidden="true">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

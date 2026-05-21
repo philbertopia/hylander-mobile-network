@@ -1,0 +1,18 @@
+# OS and editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+
+# Dependency/build folders if this static site is expanded later
+node_modules/
+dist/
+build/
+.cache/
+
